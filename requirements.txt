@@ -4,3 +4,4 @@ Jinja2
 itsdangerous
 click
 blinker
+gunicorn 
