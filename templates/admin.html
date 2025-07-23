@@ -2,44 +2,54 @@
 <html>
 <head>
     <title>Admin Panel</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .ip-info { background-color: #f9f9f9; padding: 5px; margin-top: 5px; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Admin Panel</h2>
-        <p><strong>Your IP:</strong> {{ ip }}</p>
-        <p><strong>Your Session:</strong> {{ session_token }}</p>
-        
-        <h3>Active Sessions</h3>
-        <table border="1" style="width:100%; margin-bottom:20px;">
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Session Token</th>
-                    <th>IP Address</th>
-                    <th>Created At</th>
-                    <th>Expires At</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for session in active_sessions %}
-                <tr>
-                    <td>{{ session[0] }}</td>
-                    <td>{{ session[1] }}</td>
-                    <td>{{ session[2] }}</td>
-                    <td>{{ session[3] }}</td>
-                    <td>{{ session[4] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        
-        <h3>Login Logs</h3>
-        <div style="text-align:left; background:#121212; padding:10px; border-radius:10px; max-height:300px; overflow:auto;">
-            {% for log in logs %}
-                <pre style="color:#a9f;">{{ log }}</pre>
+    <h1>Admin Panel</h1>
+    <p>Your IP: {{ current_ip }}</p>
+    
+    <h2>Active Sessions</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Token</th>
+                <th>IP Address</th>
+                <th>Details</th>
+                <th>Created</th>
+                <th>Expires</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for session in sessions %}
+            <tr>
+                <td>{{ session.username }}</td>
+                <td>{{ session.token[:8] }}...{{ session.token[-8:] }}</td>
+                <td>{{ session.ip }}</td>
+                <td>
+                    <div class="ip-info">
+                        <strong>User Agent:</strong> {{ session.ip_data.user_agent|default('Unknown') }}<br>
+                        {% if session.ip_data.headers %}
+                        <strong>Headers:</strong>
+                        <ul>
+                            {% for key, value in session.ip_data.headers.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </td>
+                <td>{{ session.created_at }}</td>
+                <td>{{ session.expires_at }}</td>
+            </tr>
             {% endfor %}
-        </div>
-    </div>
+        </tbody>
+    </table>
 </body>
 </html>

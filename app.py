@@ -3,43 +3,45 @@ import sqlite3
 from datetime import datetime, timedelta
 import secrets
 import os
+import json
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
 
-# SQLite datetime handlers for Python 3.12+
-def adapt_datetime(dt):
-    return dt.isoformat()
-
-def convert_datetime(ts):
-    return datetime.fromisoformat(ts.decode())
-
-sqlite3.register_adapter(datetime, adapt_datetime)
-sqlite3.register_converter("TIMESTAMP", convert_datetime)
-
 # Configuration
-LOG_FILE = 'log.txt'
 DATABASE = 'users.db'
 
 def get_db_connection():
-    return sqlite3.connect(DATABASE, detect_types=sqlite3.PARSE_DECLTYPES)
+    return sqlite3.connect(DATABASE)
 
-def init_db():
+def initialize_database(force_recreate=False):
+    """Initialize database with proper schema"""
+    if force_recreate and os.path.exists(DATABASE):
+        os.remove(DATABASE)
+    
     with get_db_connection() as conn:
         c = conn.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS users 
+        
+        # Create users table
+        c.execute('''CREATE TABLE IF NOT EXISTS users
                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
-                     username TEXT UNIQUE NOT NULL, 
+                     username TEXT UNIQUE NOT NULL,
                      password TEXT NOT NULL)''')
         
+        # Drop old sessions table if exists
+        c.execute("DROP TABLE IF EXISTS sessions")
+        
+        # Create new sessions table with proper schema
         c.execute('''CREATE TABLE IF NOT EXISTS sessions
                     (id INTEGER PRIMARY KEY AUTOINCREMENT,
                      token TEXT UNIQUE NOT NULL,
                      username TEXT NOT NULL,
                      ip TEXT NOT NULL,
+                     ip_data TEXT,
                      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                      expires_at TIMESTAMP NOT NULL)''')
         
+        # Add admin user if not exists
         try:
             c.execute("INSERT INTO users (username, password) VALUES (?, ?)",
                      ('admin', 'password123'))
@@ -47,22 +49,21 @@ def init_db():
         except sqlite3.IntegrityError:
             pass
 
-def log_login(username, ip, success=True):
-    with open(LOG_FILE, 'a') as f:
-        status = "SUCCESS" if success else "FAILED"
-        f.write(f"{datetime.now()} | {status} | Username: {username} | IP: {ip}\n")
-
-def cleanup_sessions():
-    with get_db_connection() as conn:
-        c = conn.cursor()
-        c.execute("DELETE FROM sessions WHERE expires_at < ?", (datetime.now(),))
-        conn.commit()
+def get_client_info():
+    """Get comprehensive client information"""
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
+    if ',' in ip:
+        ip = ip.split(',')[0].strip()
+    
+    return {
+        'ip': ip,
+        'user_agent': str(request.user_agent),
+        'headers': dict(request.headers),
+        'timestamp': datetime.now().isoformat()
+    }
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    cleanup_sessions()
-    ip = request.remote_addr
-    
     if request.method == 'POST':
         username = request.form.get('username', '').strip()
         password = request.form.get('password', '').strip()
@@ -76,79 +77,72 @@ def login():
         if user:
             session_token = secrets.token_urlsafe(32)
             expires_at = datetime.now() + timedelta(hours=1)
+            client_info = get_client_info()
             
-            with get_db_connection() as conn:
-                c = conn.cursor()
-                c.execute("INSERT INTO sessions (token, username, ip, expires_at) VALUES (?, ?, ?, ?)",
-                         (session_token, username, ip, expires_at))
-                conn.commit()
-            
-            resp = make_response(redirect('/admin'))
-            resp.set_cookie(
-                'session',
-                session_token,
-                httponly=True,
-                secure=False,  # Set to True in production with HTTPS
-                samesite='Strict',
-                max_age=3600
-            )
-            
-            log_login(username, ip, success=True)
-            return resp
+            try:
+                with get_db_connection() as conn:
+                    c = conn.cursor()
+                    c.execute('''INSERT INTO sessions 
+                                (token, username, ip, ip_data, expires_at)
+                                VALUES (?, ?, ?, ?, ?)''',
+                             (session_token, username, client_info['ip'], 
+                              json.dumps(client_info), expires_at))
+                    conn.commit()
+                
+                resp = make_response(redirect('/admin'))
+                resp.set_cookie('session', session_token, httponly=True)
+                return resp
+            except sqlite3.OperationalError as e:
+                if "no such column: ip_data" in str(e):
+                    # Database needs recreation
+                    initialize_database(force_recreate=True)
+                    return redirect('/')
+                raise
         
-        log_login(username, ip, success=False)
         return render_template('login.html', error="Invalid credentials")
     
     return render_template('login.html')
 
 @app.route('/admin')
 def admin():
-    cleanup_sessions()
     session_token = request.cookies.get('session')
-    
     if not session_token:
-        return "Access Denied - No session token", 403
+        return "Access Denied", 403
     
     with get_db_connection() as conn:
         c = conn.cursor()
-        c.execute('''SELECT username, ip FROM sessions 
+        c.execute('''SELECT username, ip, ip_data FROM sessions
                      WHERE token = ? AND expires_at > ?''',
                  (session_token, datetime.now()))
         session_data = c.fetchone()
     
-    if not session_data:
-        return "Access Denied - Invalid or expired session", 403
-    
-    username, session_ip = session_data
-    
-    # Temporarily disabled for testing
-    # if session_ip != request.remote_addr:
-    #     return "Access Denied - IP mismatch", 403
-    
-    if username != 'admin':
-        return "Access Denied - Admin privileges required", 403
+    if not session_data or session_data[0] != 'admin':
+        return "Access Denied", 403
     
     # Get all active sessions
     with get_db_connection() as conn:
         c = conn.cursor()
-        c.execute('''SELECT username, token, ip, created_at, expires_at FROM sessions 
-                      WHERE expires_at > ?''',
-                  (datetime.now(),))
-        active_sessions = c.fetchall()
+        c.execute('''SELECT username, token, ip, ip_data, created_at, expires_at 
+                     FROM sessions WHERE expires_at > ?''',
+                 (datetime.now(),))
+        sessions = []
+        for row in c.fetchall():
+            try:
+                ip_data = json.loads(row[3]) if row[3] else {}
+            except:
+                ip_data = {}
+            sessions.append({
+                'username': row[0],
+                'token': row[1],
+                'ip': row[2],
+                'ip_data': ip_data,
+                'created_at': row[4],
+                'expires_at': row[5]
+            })
     
-    try:
-        with open(LOG_FILE, 'r') as f:
-            logs = f.readlines()
-    except FileNotFoundError:
-        logs = []
-    
-    return render_template(
-        'admin.html',
-        username=username,
-        ip=request.remote_addr,
-        logs=reversed(logs[-100:]),
-        active_sessions=active_sessions
-    )
+    return render_template('admin.html', 
+                         sessions=sessions,
+                         current_ip=get_client_info()['ip'])
 
 @app.route('/logout')
 def logout():
@@ -164,9 +158,12 @@ def logout():
     return resp
 
 if __name__ == '__main__':
+    # Ensure database directory exists
     db_dir = os.path.dirname(DATABASE)
     if db_dir:
         os.makedirs(db_dir, exist_ok=True)
-
-    init_db()
+    
+    # Initialize database with force recreate to ensure proper schema
+    initialize_database(force_recreate=True)
+    
     app.run(debug=True, host='0.0.0.0', port=5000)
