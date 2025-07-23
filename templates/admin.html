@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Panel</h2>
+        <p><strong>Your IP:</strong> {{ ip }}</p>
+        <p><strong>Your Session:</strong> {{ session_token }}</p>
+        
+        <h3>Active Sessions</h3>
+        <table border="1" style="width:100%; margin-bottom:20px;">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Session Token</th>
+                    <th>IP Address</th>
+                    <th>Created At</th>
+                    <th>Expires At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in active_sessions %}
+                <tr>
+                    <td>{{ session[0] }}</td>
+                    <td>{{ session[1] }}</td>
+                    <td>{{ session[2] }}</td>
+                    <td>{{ session[3] }}</td>
+                    <td>{{ session[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h3>Login Logs</h3>
+        <div style="text-align:left; background:#121212; padding:10px; border-radius:10px; max-height:300px; overflow:auto;">
+            {% for log in logs %}
+                <pre style="color:#a9f;">{{ log }}</pre>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
