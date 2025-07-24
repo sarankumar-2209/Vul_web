@@ -7,3 +7,4 @@ blinker
 gunicorn 
 geoip2
 flask_limiter
+user_agents
