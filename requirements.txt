@@ -6,3 +6,4 @@ click
 blinker
 gunicorn 
 geoip2
+flask_limiter
