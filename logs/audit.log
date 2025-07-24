@@ -1,0 +1,591 @@
+2025-07-23 18:10:43,081 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.130:5000
+2025-07-23 18:10:43,081 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-23 18:10:43,082 [INFO]  * Restarting with stat
+2025-07-23 18:10:43,414 [WARNING]  * Debugger is active!
+2025-07-23 18:10:43,418 [INFO]  * Debugger PIN: 107-898-288
+2025-07-23 18:10:56,478 [INFO] 192.168.0.130 - - [23/Jul/2025 18:10:56] "GET / HTTP/1.1" 200 -
+2025-07-23 18:10:56,619 [INFO] 192.168.0.130 - - [23/Jul/2025 18:10:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-07-23 18:11:06,783 [INFO] \u2705 Login success: user=admin, IP=192.168.0.130
+2025-07-23 18:11:06,784 [INFO] 192.168.0.130 - - [23/Jul/2025 18:11:06] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-23 18:11:06,811 [INFO] 192.168.0.130 - - [23/Jul/2025 18:11:06] "GET /admin HTTP/1.1" 200 -
+2025-07-24 10:12:22,592 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 10:12:22,593 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 10:12:22,595 [INFO]  * Restarting with stat
+2025-07-24 10:12:23,164 [WARNING]  * Debugger is active!
+2025-07-24 10:12:23,171 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:12:59,206 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 10:12:59,206 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 10:12:59,207 [INFO]  * Restarting with stat
+2025-07-24 10:12:59,575 [WARNING]  * Debugger is active!
+2025-07-24 10:12:59,581 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:16:22,295 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 10:16:22,295 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 10:16:22,298 [INFO]  * Restarting with stat
+2025-07-24 10:16:22,716 [WARNING]  * Debugger is active!
+2025-07-24 10:16:22,720 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:16:33,064 [INFO] 192.168.0.129 - - [24/Jul/2025 10:16:33] "GET / HTTP/1.1" 200 -
+2025-07-24 10:16:33,143 [INFO] 192.168.0.129 - - [24/Jul/2025 10:16:33] "GET /static/style.css HTTP/1.1" 200 -
+2025-07-24 10:16:33,180 [INFO] 192.168.0.129 - - [24/Jul/2025 10:16:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 10:16:42,692 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129
+2025-07-24 10:16:42,693 [INFO] 192.168.0.129 - - [24/Jul/2025 10:16:42] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 10:16:42,755 [INFO] 192.168.0.129 - - [24/Jul/2025 10:16:42] "GET /admin HTTP/1.1" 200 -
+2025-07-24 10:26:48,390 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 10:26:48,444 [INFO]  * Restarting with stat
+2025-07-24 10:26:49,528 [WARNING]  * Debugger is active!
+2025-07-24 10:26:49,533 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:31:07,129 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 10:31:07,129 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 10:31:07,130 [INFO]  * Restarting with stat
+2025-07-24 10:31:07,448 [WARNING]  * Debugger is active!
+2025-07-24 10:31:07,451 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:31:16,439 [INFO] 192.168.0.129 - - [24/Jul/2025 10:31:16] "GET / HTTP/1.1" 200 -
+2025-07-24 10:31:28,756 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129
+2025-07-24 10:31:28,770 [INFO] admin|login_success|192.168.0.129|{'ip': '192.168.0.129'}
+2025-07-24 10:31:28,771 [INFO] 192.168.0.129 - - [24/Jul/2025 10:31:28] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 10:31:28,782 [WARNING] \U0001f6a8 Unauthorized admin access attempt from 192.168.0.129
+2025-07-24 10:31:28,792 [INFO] unknown|unauthorized_access|192.168.0.129|
+2025-07-24 10:31:28,793 [INFO] 192.168.0.129 - - [24/Jul/2025 10:31:28] "[31m[1mGET /admin HTTP/1.1[0m" 403 -
+2025-07-24 10:36:21,175 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 10:36:21,214 [INFO]  * Restarting with stat
+2025-07-24 10:36:21,793 [WARNING]  * Debugger is active!
+2025-07-24 10:36:21,797 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:37:18,259 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 10:37:18,309 [INFO]  * Restarting with stat
+2025-07-24 10:37:18,917 [WARNING]  * Debugger is active!
+2025-07-24 10:37:18,923 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:37:45,284 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 10:37:45,334 [INFO]  * Restarting with stat
+2025-07-24 10:37:45,746 [WARNING]  * Debugger is active!
+2025-07-24 10:37:45,750 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:37:47,776 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 10:37:47,810 [INFO]  * Restarting with stat
+2025-07-24 10:37:48,199 [WARNING]  * Debugger is active!
+2025-07-24 10:37:48,204 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:43:46,083 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 10:43:46,083 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 10:43:46,085 [INFO]  * Restarting with stat
+2025-07-24 10:43:46,436 [WARNING]  * Debugger is active!
+2025-07-24 10:43:46,440 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:44:00,166 [INFO] 192.168.0.129 - - [24/Jul/2025 10:44:00] "GET / HTTP/1.1" 200 -
+2025-07-24 10:44:10,170 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129
+2025-07-24 10:44:10,178 [INFO] admin|login_success|192.168.0.129|{'ip': '192.168.0.129'}
+2025-07-24 10:44:10,180 [INFO] 192.168.0.129 - - [24/Jul/2025 10:44:10] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 10:44:10,188 [INFO] 192.168.0.129 - - [24/Jul/2025 10:44:10] "[32mGET /admin HTTP/1.1[0m" 302 -
+2025-07-24 10:44:10,197 [INFO] 192.168.0.129 - - [24/Jul/2025 10:44:10] "GET / HTTP/1.1" 200 -
+2025-07-24 10:45:41,211 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129
+2025-07-24 10:45:41,216 [INFO] admin|login_success|192.168.0.129|{'ip': '192.168.0.129'}
+2025-07-24 10:45:41,216 [INFO] 192.168.0.129 - - [24/Jul/2025 10:45:41] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 10:45:41,220 [INFO] 192.168.0.129 - - [24/Jul/2025 10:45:41] "[32mGET /admin HTTP/1.1[0m" 302 -
+2025-07-24 10:45:41,222 [INFO] 192.168.0.129 - - [24/Jul/2025 10:45:41] "GET / HTTP/1.1" 200 -
+2025-07-24 10:57:38,803 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 10:57:38,804 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 10:57:38,806 [INFO]  * Restarting with stat
+2025-07-24 10:57:39,165 [WARNING]  * Debugger is active!
+2025-07-24 10:57:39,170 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 10:57:45,628 [INFO] 192.168.0.129 - - [24/Jul/2025 10:57:45] "GET / HTTP/1.1" 200 -
+2025-07-24 10:57:45,777 [INFO] 192.168.0.129 - - [24/Jul/2025 10:57:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 10:58:01,506 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129
+2025-07-24 10:58:01,507 [INFO] admin|login_success|192.168.0.129|{'ip': '192.168.0.129'}
+2025-07-24 10:58:01,507 [INFO] 192.168.0.129 - - [24/Jul/2025 10:58:01] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 10:58:01,655 [INFO] 192.168.0.129 - - [24/Jul/2025 10:58:01] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:22:46,432 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:22:46,432 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:22:46,446 [INFO]  * Restarting with stat
+2025-07-24 12:22:47,058 [WARNING]  * Debugger is active!
+2025-07-24 12:22:47,095 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:22:56,758 [INFO] 192.168.0.129 - - [24/Jul/2025 12:22:56] "GET / HTTP/1.1" 200 -
+2025-07-24 12:22:56,922 [INFO] 192.168.0.129 - - [24/Jul/2025 12:22:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 12:23:04,398 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129
+2025-07-24 12:23:04,399 [INFO] admin|login_success|192.168.0.129|{'ip': '192.168.0.129'}
+2025-07-24 12:23:04,403 [INFO] 192.168.0.129 - - [24/Jul/2025 12:23:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 12:23:04,504 [INFO] 192.168.0.129 - - [24/Jul/2025 12:23:04] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:24:04,798 [INFO] 192.168.0.129 - - [24/Jul/2025 12:24:04] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:25:05,188 [INFO] 192.168.0.129 - - [24/Jul/2025 12:25:05] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:26:06,207 [INFO] 192.168.0.129 - - [24/Jul/2025 12:26:06] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:27:07,314 [INFO] 192.168.0.129 - - [24/Jul/2025 12:27:07] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:28:08,317 [INFO] 192.168.0.129 - - [24/Jul/2025 12:28:08] "GET /admin HTTP/1.1" 200 -
+2025-07-24 12:28:08,518 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 12:28:08,984 [INFO]  * Restarting with stat
+2025-07-24 12:29:14,979 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:29:14,979 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:29:14,981 [INFO]  * Restarting with stat
+2025-07-24 12:29:16,197 [WARNING]  * Debugger is active!
+2025-07-24 12:29:16,206 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:29:19,809 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:19] "[32mGET /admin HTTP/1.1[0m" 302 -
+2025-07-24 12:29:19,820 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:19] "GET / HTTP/1.1" 200 -
+2025-07-24 12:29:30,019 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:30] "GET / HTTP/1.1" 200 -
+2025-07-24 12:29:39,402 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:39] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-07-24 12:29:39,664 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:39] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-24 12:29:39,670 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:39] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-24 12:29:39,718 [INFO] 192.168.0.129 - - [24/Jul/2025 12:29:39] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-24 12:31:42,486 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:31:42,486 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:31:42,488 [INFO]  * Restarting with stat
+2025-07-24 12:31:43,642 [WARNING]  * Debugger is active!
+2025-07-24 12:31:43,645 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:31:52,324 [INFO] 192.168.0.129 - - [24/Jul/2025 12:31:52] "GET / HTTP/1.1" 200 -
+2025-07-24 12:32:01,555 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129, Location=Unknown, Unknown
+2025-07-24 12:32:02,005 [INFO] admin|login_success|192.168.0.129|Unknown|Unknown|{'ip': '192.168.0.129', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0'}
+2025-07-24 12:32:02,007 [INFO] {"timestamp": "2025-07-24T12:32:02.007271", "username": "admin", "activity": "login_success", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.0.129", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0"}}
+2025-07-24 12:32:02,008 [INFO] 192.168.0.129 - - [24/Jul/2025 12:32:02] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 12:32:02,416 [INFO] admin|admin_access|192.168.0.129|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 12:32:02,416 [INFO] {"timestamp": "2025-07-24T12:32:02.416348", "username": "admin", "activity": "admin_access", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 12:32:02,925 [INFO] 192.168.0.129 - - [24/Jul/2025 12:32:02] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-07-24 12:32:03,182 [INFO] 192.168.0.129 - - [24/Jul/2025 12:32:03] "GET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-07-24 12:32:03,186 [INFO] 192.168.0.129 - - [24/Jul/2025 12:32:03] "GET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-07-24 12:32:03,317 [INFO] 192.168.0.129 - - [24/Jul/2025 12:32:03] "GET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-07-24 12:38:18,760 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:38:18,760 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:38:18,761 [INFO]  * Restarting with stat
+2025-07-24 12:38:20,148 [WARNING]  * Debugger is active!
+2025-07-24 12:38:20,154 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:38:30,396 [INFO] 192.168.0.129 - - [24/Jul/2025 12:38:30] "GET / HTTP/1.1" 200 -
+2025-07-24 12:38:46,031 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129, Location=Unknown, Unknown
+2025-07-24 12:38:46,485 [INFO] admin|login_success|192.168.0.129|Unknown|Unknown|{'ip': '192.168.0.129', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0'}
+2025-07-24 12:38:46,486 [INFO] {"timestamp": "2025-07-24T12:38:46.486542", "username": "admin", "activity": "login_success", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.0.129", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0"}}
+2025-07-24 12:38:46,487 [INFO] 192.168.0.129 - - [24/Jul/2025 12:38:46] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 12:38:46,857 [INFO] admin|admin_access|192.168.0.129|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 12:38:46,857 [INFO] {"timestamp": "2025-07-24T12:38:46.857608", "username": "admin", "activity": "admin_access", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 12:38:47,333 [INFO] 192.168.0.129 - - [24/Jul/2025 12:38:47] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-07-24 12:38:47,502 [INFO] 192.168.0.129 - - [24/Jul/2025 12:38:47] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-24 12:38:47,506 [INFO] 192.168.0.129 - - [24/Jul/2025 12:38:47] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-24 12:38:47,551 [INFO] 192.168.0.129 - - [24/Jul/2025 12:38:47] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 12:42:13,826 [INFO]  * Detected change in 'c:\\Users\\kalya\\OneDrive\\Desktop\\Vul_web\\app.py', reloading
+2025-07-24 12:42:13,931 [INFO]  * Restarting with stat
+2025-07-24 12:53:23,778 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:53:23,778 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:53:23,781 [INFO]  * Restarting with stat
+2025-07-24 12:53:25,189 [WARNING]  * Debugger is active!
+2025-07-24 12:53:25,195 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:53:28,357 [INFO] 192.168.0.129 - - [24/Jul/2025 12:53:28] "GET / HTTP/1.1" 200 -
+2025-07-24 12:53:37,510 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129, Location=Unknown, Unknown
+2025-07-24 12:53:37,870 [INFO] admin|login_success|192.168.0.129|Unknown|Unknown|{'ip': '192.168.0.129', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0'}
+2025-07-24 12:53:37,870 [INFO] {"timestamp": "2025-07-24T12:53:37.870699", "username": "admin", "activity": "login_success", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.0.129", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0"}}
+2025-07-24 12:53:37,871 [INFO] 192.168.0.129 - - [24/Jul/2025 12:53:37] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 12:53:38,229 [INFO] admin|admin_access|192.168.0.129|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 12:53:38,229 [INFO] {"timestamp": "2025-07-24T12:53:38.229876", "username": "admin", "activity": "admin_access", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 12:53:38,876 [INFO] 192.168.0.129 - - [24/Jul/2025 12:53:38] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-07-24 12:53:39,225 [INFO] 192.168.0.129 - - [24/Jul/2025 12:53:39] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-24 12:53:39,231 [INFO] 192.168.0.129 - - [24/Jul/2025 12:53:39] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-24 12:53:39,280 [INFO] 192.168.0.129 - - [24/Jul/2025 12:53:39] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 12:55:27,649 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:55:27,649 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:55:27,651 [INFO]  * Restarting with stat
+2025-07-24 12:55:28,849 [WARNING]  * Debugger is active!
+2025-07-24 12:55:28,856 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:55:39,979 [INFO] 192.168.0.129 - - [24/Jul/2025 12:55:39] "GET / HTTP/1.1" 200 -
+2025-07-24 12:55:51,033 [INFO] \u2705 Login success: user=admin, IP=192.168.0.129, Location=Unknown, Unknown
+2025-07-24 12:55:51,353 [INFO] admin|login_success|192.168.0.129|Unknown|Unknown|{'ip': '192.168.0.129', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0'}
+2025-07-24 12:55:51,353 [INFO] {"timestamp": "2025-07-24T12:55:51.353409", "username": "admin", "activity": "login_success", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.0.129", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0"}}
+2025-07-24 12:55:51,354 [INFO] 192.168.0.129 - - [24/Jul/2025 12:55:51] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 12:55:51,748 [INFO] admin|admin_access|192.168.0.129|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 12:55:51,748 [INFO] {"timestamp": "2025-07-24T12:55:51.748861", "username": "admin", "activity": "admin_access", "ip": "192.168.0.129", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 12:55:52,410 [INFO] 192.168.0.129 - - [24/Jul/2025 12:55:52] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-07-24 12:55:52,816 [INFO] 192.168.0.129 - - [24/Jul/2025 12:55:52] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-24 12:55:52,823 [INFO] 192.168.0.129 - - [24/Jul/2025 12:55:52] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-24 12:55:52,898 [INFO] 192.168.0.129 - - [24/Jul/2025 12:55:52] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 12:58:54,240 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.129:5000
+2025-07-24 12:58:54,240 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 12:58:54,242 [INFO]  * Restarting with stat
+2025-07-24 12:58:55,458 [WARNING]  * Debugger is active!
+2025-07-24 12:58:55,462 [INFO]  * Debugger PIN: 107-898-288
+2025-07-24 12:58:59,677 [INFO] 127.0.0.1 - - [24/Jul/2025 12:58:59] "GET / HTTP/1.1" 200 -
+2025-07-24 12:59:00,338 [INFO] 127.0.0.1 - - [24/Jul/2025 12:59:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-24 12:59:08,136 [INFO] \u2705 Login success: user=admin, IP=127.0.0.1, Location=Localhost, Local
+2025-07-24 12:59:08,136 [INFO] admin|login_success|127.0.0.1|Localhost|Local|{'ip': '127.0.0.1', 'location': {'city': 'Localhost', 'country': 'Local'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0'}
+2025-07-24 12:59:08,137 [INFO] {"timestamp": "2025-07-24T12:59:08.136276", "username": "admin", "activity": "login_success", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "127.0.0.1", "location": {"city": "Localhost", "country": "Local"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0"}}
+2025-07-24 12:59:08,137 [INFO] 127.0.0.1 - - [24/Jul/2025 12:59:08] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 12:59:08,143 [INFO] admin|admin_access|127.0.0.1|Localhost|Local|{'path': '/admin'}
+2025-07-24 12:59:08,143 [INFO] {"timestamp": "2025-07-24T12:59:08.143627", "username": "admin", "activity": "admin_access", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 12:59:08,301 [INFO] 127.0.0.1 - - [24/Jul/2025 12:59:08] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:00:08,597 [INFO] admin|admin_access|127.0.0.1|Localhost|Local|{'path': '/admin'}
+2025-07-24 13:00:08,598 [INFO] {"timestamp": "2025-07-24T13:00:08.598132", "username": "admin", "activity": "admin_access", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:00:08,673 [INFO] 127.0.0.1 - - [24/Jul/2025 13:00:08] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:01:08,716 [INFO] admin|admin_access|127.0.0.1|Localhost|Local|{'path': '/admin'}
+2025-07-24 13:01:08,718 [INFO] {"timestamp": "2025-07-24T13:01:08.718128", "username": "admin", "activity": "admin_access", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0", "device_info": {"platform": "Windows", "browser": "Edge", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:01:08,764 [INFO] 127.0.0.1 - - [24/Jul/2025 13:01:08] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:18:56,470 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 13:18:56,471 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 13:18:56,474 [INFO]  * Restarting with stat
+2025-07-24 13:18:57,622 [WARNING]  * Debugger is active!
+2025-07-24 13:18:57,630 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:19:38,848 [INFO] 192.168.1.125 - - [24/Jul/2025 13:19:38] "GET / HTTP/1.1" 200 -
+2025-07-24 13:19:48,338 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 13:19:48,686 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 13:19:48,687 [INFO] {"timestamp": "2025-07-24T13:19:48.687075", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 13:19:48,689 [INFO] 192.168.1.125 - - [24/Jul/2025 13:19:48] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 13:19:49,046 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 13:19:49,047 [INFO] {"timestamp": "2025-07-24T13:19:49.046989", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:19:49,577 [INFO] 192.168.1.125 - - [24/Jul/2025 13:19:49] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:26:15,381 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 13:26:15,480 [INFO]  * Restarting with stat
+2025-07-24 13:26:16,565 [WARNING]  * Debugger is active!
+2025-07-24 13:26:16,567 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:28:09,649 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 13:28:09,649 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 13:28:09,651 [INFO]  * Restarting with stat
+2025-07-24 13:28:10,770 [WARNING]  * Debugger is active!
+2025-07-24 13:28:10,775 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:30:21,340 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 13:30:21,340 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 13:30:21,342 [INFO]  * Restarting with stat
+2025-07-24 13:30:22,370 [WARNING]  * Debugger is active!
+2025-07-24 13:30:22,373 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:30:31,241 [INFO] 127.0.0.1 - - [24/Jul/2025 13:30:31] "GET / HTTP/1.1" 200 -
+2025-07-24 13:30:40,690 [INFO] \u2705 Login success: user=admin, IP=127.0.0.1, Location=Localhost, Local
+2025-07-24 13:30:40,691 [INFO] admin|login_success|127.0.0.1|Localhost|Local|{'ip': '127.0.0.1', 'location': {'city': 'Localhost', 'country': 'Local'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 13:30:40,692 [INFO] {"timestamp": "2025-07-24T13:30:40.692408", "username": "admin", "activity": "login_success", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "127.0.0.1", "location": {"city": "Localhost", "country": "Local"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 13:30:40,693 [INFO] 127.0.0.1 - - [24/Jul/2025 13:30:40] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 13:30:40,704 [INFO] admin|admin_access|127.0.0.1|Localhost|Local|{'path': '/admin'}
+2025-07-24 13:30:40,705 [INFO] {"timestamp": "2025-07-24T13:30:40.705329", "username": "admin", "activity": "admin_access", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:30:40,937 [INFO] 127.0.0.1 - - [24/Jul/2025 13:30:40] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:31:19,152 [INFO] 127.0.0.1 - - [24/Jul/2025 13:31:19] "[33mGET /session HTTP/1.1[0m" 404 -
+2025-07-24 13:31:41,344 [INFO] admin|admin_access|127.0.0.1|Localhost|Local|{'path': '/admin'}
+2025-07-24 13:31:41,345 [INFO] {"timestamp": "2025-07-24T13:31:41.345029", "username": "admin", "activity": "admin_access", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:31:41,456 [INFO] 127.0.0.1 - - [24/Jul/2025 13:31:41] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:32:42,330 [INFO] admin|admin_access|127.0.0.1|Localhost|Local|{'path': '/admin'}
+2025-07-24 13:32:42,330 [INFO] {"timestamp": "2025-07-24T13:32:42.330384", "username": "admin", "activity": "admin_access", "ip": "127.0.0.1", "geolocation": {"city": "Localhost", "country": "Local"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:32:42,434 [INFO] 127.0.0.1 - - [24/Jul/2025 13:32:42] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:33:38,212 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 13:33:38,212 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 13:33:38,213 [INFO]  * Restarting with stat
+2025-07-24 13:33:39,024 [WARNING]  * Debugger is active!
+2025-07-24 13:33:39,030 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:33:43,331 [INFO] 127.0.0.1 - - [24/Jul/2025 13:33:43] "[32mGET /admin HTTP/1.1[0m" 302 -
+2025-07-24 13:33:43,347 [INFO] 127.0.0.1 - - [24/Jul/2025 13:33:43] "GET / HTTP/1.1" 200 -
+2025-07-24 13:33:53,974 [INFO] 192.168.1.125 - - [24/Jul/2025 13:33:53] "GET / HTTP/1.1" 200 -
+2025-07-24 13:34:02,581 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 13:34:02,901 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 13:34:02,902 [INFO] {"timestamp": "2025-07-24T13:34:02.902025", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 13:34:02,903 [INFO] 192.168.1.125 - - [24/Jul/2025 13:34:02] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 13:34:03,220 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 13:34:03,220 [INFO] {"timestamp": "2025-07-24T13:34:03.220700", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:34:03,784 [INFO] 192.168.1.125 - - [24/Jul/2025 13:34:03] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-07-24 13:34:03,989 [INFO] 192.168.1.125 - - [24/Jul/2025 13:34:03] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-24 13:34:03,994 [INFO] 192.168.1.125 - - [24/Jul/2025 13:34:03] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-24 13:34:04,057 [INFO] 192.168.1.125 - - [24/Jul/2025 13:34:04] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 13:34:04,076 [INFO] 192.168.1.125 - - [24/Jul/2025 13:34:04] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 13:37:25,137 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 13:37:25,138 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 13:37:25,141 [INFO]  * Restarting with stat
+2025-07-24 13:37:26,150 [WARNING]  * Debugger is active!
+2025-07-24 13:37:26,152 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:37:36,032 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 13:37:36,032 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 13:37:36,035 [INFO]  * Restarting with stat
+2025-07-24 13:37:36,953 [WARNING]  * Debugger is active!
+2025-07-24 13:37:36,956 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 13:37:42,368 [INFO] 192.168.1.125 - - [24/Jul/2025 13:37:42] "GET / HTTP/1.1" 200 -
+2025-07-24 13:37:55,361 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 13:37:55,736 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 13:37:55,737 [INFO] {"timestamp": "2025-07-24T13:37:55.736947", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 13:37:55,738 [INFO] 192.168.1.125 - - [24/Jul/2025 13:37:55] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 13:37:56,040 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 13:37:56,040 [INFO] {"timestamp": "2025-07-24T13:37:56.040449", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:37:56,567 [INFO] 192.168.1.125 - - [24/Jul/2025 13:37:56] "GET /admin HTTP/1.1" 200 -
+2025-07-24 13:38:09,956 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 13:38:09,957 [INFO] {"timestamp": "2025-07-24T13:38:09.957236", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 13:38:10,370 [INFO] 192.168.1.125 - - [24/Jul/2025 13:38:10] "GET /admin HTTP/1.1" 200 -
+2025-07-24 14:09:04,381 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 14:09:04,381 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 14:09:04,384 [INFO]  * Restarting with stat
+2025-07-24 14:09:05,164 [WARNING]  * Debugger is active!
+2025-07-24 14:09:05,166 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:09:13,313 [INFO] 192.168.1.125 - - [24/Jul/2025 14:09:13] "GET / HTTP/1.1" 200 -
+2025-07-24 14:09:20,351 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 14:09:20,701 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 14:09:20,702 [INFO] {"timestamp": "2025-07-24T14:09:20.702237", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 14:09:20,703 [INFO] 192.168.1.125 - - [24/Jul/2025 14:09:20] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 14:09:20,996 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 14:09:20,997 [INFO] {"timestamp": "2025-07-24T14:09:20.997074", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 14:09:21,489 [INFO] 192.168.1.125 - - [24/Jul/2025 14:09:21] "GET /admin HTTP/1.1" 200 -
+2025-07-24 14:25:04,100 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:25:04,275 [INFO]  * Restarting with stat
+2025-07-24 14:25:05,316 [WARNING]  * Debugger is active!
+2025-07-24 14:25:05,319 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:25:25,454 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:25:25,515 [INFO]  * Restarting with stat
+2025-07-24 14:25:26,834 [WARNING]  * Debugger is active!
+2025-07-24 14:25:26,840 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:25:58,048 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:25:58,113 [INFO]  * Restarting with stat
+2025-07-24 14:25:59,249 [WARNING]  * Debugger is active!
+2025-07-24 14:25:59,251 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:27:08,627 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:27:08,686 [INFO]  * Restarting with stat
+2025-07-24 14:28:10,149 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 14:28:10,149 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 14:28:10,150 [INFO]  * Restarting with stat
+2025-07-24 14:28:10,954 [WARNING]  * Debugger is active!
+2025-07-24 14:28:10,956 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:28:14,721 [INFO] 192.168.1.125 - - [24/Jul/2025 14:28:14] "GET / HTTP/1.1" 200 -
+2025-07-24 14:28:23,656 [INFO] The CSRF token is missing.
+2025-07-24 14:28:23,657 [INFO] 192.168.1.125 - - [24/Jul/2025 14:28:23] "[31m[1mPOST / HTTP/1.1[0m" 400 -
+2025-07-24 14:28:59,164 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:28:59,217 [INFO]  * Restarting with stat
+2025-07-24 14:29:00,083 [WARNING]  * Debugger is active!
+2025-07-24 14:29:00,085 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:29:06,781 [INFO] 192.168.1.125 - - [24/Jul/2025 14:29:06] "GET / HTTP/1.1" 200 -
+2025-07-24 14:29:13,954 [INFO] The CSRF token is missing.
+2025-07-24 14:29:13,955 [INFO] 192.168.1.125 - - [24/Jul/2025 14:29:13] "[31m[1mPOST / HTTP/1.1[0m" 400 -
+2025-07-24 14:30:37,571 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:30:37,640 [INFO]  * Restarting with stat
+2025-07-24 14:30:38,566 [WARNING]  * Debugger is active!
+2025-07-24 14:30:38,569 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:30:45,603 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 14:30:45,660 [INFO]  * Restarting with stat
+2025-07-24 14:30:46,500 [WARNING]  * Debugger is active!
+2025-07-24 14:30:46,502 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:30:57,898 [INFO] 127.0.0.1 - - [24/Jul/2025 14:30:57] "GET / HTTP/1.1" 200 -
+2025-07-24 14:31:05,155 [INFO] The CSRF token is missing.
+2025-07-24 14:31:05,155 [INFO] 127.0.0.1 - - [24/Jul/2025 14:31:05] "[31m[1mPOST / HTTP/1.1[0m" 400 -
+2025-07-24 14:32:47,742 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 14:32:47,742 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 14:32:47,743 [INFO]  * Restarting with stat
+2025-07-24 14:32:48,536 [WARNING]  * Debugger is active!
+2025-07-24 14:32:48,538 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 14:32:52,655 [INFO] 192.168.1.125 - - [24/Jul/2025 14:32:52] "GET / HTTP/1.1" 200 -
+2025-07-24 14:33:00,565 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 14:33:00,907 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 14:33:00,907 [INFO] {"timestamp": "2025-07-24T14:33:00.907526", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 14:33:00,908 [INFO] 192.168.1.125 - - [24/Jul/2025 14:33:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 14:33:01,187 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 14:33:01,187 [INFO] {"timestamp": "2025-07-24T14:33:01.187492", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 14:33:01,641 [INFO] 192.168.1.125 - - [24/Jul/2025 14:33:01] "[35m[1mGET /admin HTTP/1.1[0m" 500 -
+2025-07-24 14:33:01,742 [INFO] 192.168.1.125 - - [24/Jul/2025 14:33:01] "[36mGET /admin?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-07-24 14:33:01,773 [INFO] 192.168.1.125 - - [24/Jul/2025 14:33:01] "[36mGET /admin?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-07-24 14:33:01,918 [INFO] 192.168.1.125 - - [24/Jul/2025 14:33:01] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 14:33:01,928 [INFO] 192.168.1.125 - - [24/Jul/2025 14:33:01] "[36mGET /admin?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-07-24 15:02:35,098 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 15:02:35,098 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 15:02:35,101 [INFO]  * Restarting with stat
+2025-07-24 15:02:36,139 [WARNING]  * Debugger is active!
+2025-07-24 15:02:36,144 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:02:45,623 [INFO] 192.168.1.125 - - [24/Jul/2025 15:02:45] "GET / HTTP/1.1" 200 -
+2025-07-24 15:02:57,616 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:02:57,925 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:02:57,925 [INFO] {"timestamp": "2025-07-24T15:02:57.925873", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:02:57,927 [INFO] 192.168.1.125 - - [24/Jul/2025 15:02:57] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 15:02:58,468 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:02:58,468 [INFO] {"timestamp": "2025-07-24T15:02:58.468817", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:02:59,052 [INFO] 192.168.1.125 - - [24/Jul/2025 15:02:59] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:03:13,333 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:03:13,333 [INFO] {"timestamp": "2025-07-24T15:03:13.333912", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:03:13,681 [INFO] 192.168.1.125 - - [24/Jul/2025 15:03:13] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:03:19,737 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:03:19,738 [INFO] {"timestamp": "2025-07-24T15:03:19.738161", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:03:20,082 [INFO] 192.168.1.125 - - [24/Jul/2025 15:03:20] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:05:51,615 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 15:05:51,615 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 15:05:51,616 [INFO]  * Restarting with stat
+2025-07-24 15:05:52,649 [WARNING]  * Debugger is active!
+2025-07-24 15:05:52,651 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:05:57,375 [INFO] 192.168.1.125 - - [24/Jul/2025 15:05:57] "GET / HTTP/1.1" 200 -
+2025-07-24 15:06:04,285 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:06:04,641 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:06:04,641 [INFO] {"timestamp": "2025-07-24T15:06:04.641491", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:06:04,642 [INFO] 192.168.1.125 - - [24/Jul/2025 15:06:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 15:06:05,021 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:06:05,022 [INFO] {"timestamp": "2025-07-24T15:06:05.021980", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:06:05,470 [INFO] 192.168.1.125 - - [24/Jul/2025 15:06:05] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:06:13,392 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:06:13,393 [INFO] {"timestamp": "2025-07-24T15:06:13.393689", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:06:13,808 [INFO] 192.168.1.125 - - [24/Jul/2025 15:06:13] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:06:14,523 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:06:14,524 [INFO] {"timestamp": "2025-07-24T15:06:14.524534", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:06:14,939 [INFO] 192.168.1.125 - - [24/Jul/2025 15:06:14] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:06:34,957 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:06:34,957 [INFO] {"timestamp": "2025-07-24T15:06:34.957786", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:06:35,350 [INFO] 192.168.1.125 - - [24/Jul/2025 15:06:35] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:07:36,734 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:07:36,734 [INFO] {"timestamp": "2025-07-24T15:07:36.734678", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:07:37,063 [INFO] 192.168.1.125 - - [24/Jul/2025 15:07:37] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:08:40,662 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:08:40,662 [INFO] {"timestamp": "2025-07-24T15:08:40.662500", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:08:41,151 [INFO] 192.168.1.125 - - [24/Jul/2025 15:08:41] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:09:42,678 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:09:42,678 [INFO] {"timestamp": "2025-07-24T15:09:42.678306", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:09:43,026 [INFO] 192.168.1.125 - - [24/Jul/2025 15:09:43] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:10:44,669 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:10:44,670 [INFO] {"timestamp": "2025-07-24T15:10:44.670174", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:10:45,014 [INFO] 192.168.1.125 - - [24/Jul/2025 15:10:45] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:11:46,671 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:11:46,672 [INFO] {"timestamp": "2025-07-24T15:11:46.672019", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:11:47,056 [INFO] 192.168.1.125 - - [24/Jul/2025 15:11:47] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:12:14,599 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 15:12:14,650 [INFO]  * Restarting with stat
+2025-07-24 15:12:15,538 [WARNING]  * Debugger is active!
+2025-07-24 15:12:15,540 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:12:38,649 [INFO]  * Detected change in 'c:\\Users\\Saran\\Desktop\\imperative\\Vul_web\\app.py', reloading
+2025-07-24 15:12:38,706 [INFO]  * Restarting with stat
+2025-07-24 15:12:39,542 [WARNING]  * Debugger is active!
+2025-07-24 15:12:39,545 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:12:48,318 [INFO] 192.168.1.125 - - [24/Jul/2025 15:12:48] "[32mGET /admin HTTP/1.1[0m" 302 -
+2025-07-24 15:12:48,329 [INFO] 192.168.1.125 - - [24/Jul/2025 15:12:48] "GET / HTTP/1.1" 200 -
+2025-07-24 15:13:05,045 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 15:13:05,045 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 15:13:05,048 [INFO]  * Restarting with stat
+2025-07-24 15:13:05,849 [WARNING]  * Debugger is active!
+2025-07-24 15:13:05,851 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:13:12,814 [INFO] 192.168.1.125 - - [24/Jul/2025 15:13:12] "GET / HTTP/1.1" 200 -
+2025-07-24 15:13:20,376 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:13:20,724 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:13:20,724 [INFO] {"timestamp": "2025-07-24T15:13:20.724843", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:13:20,726 [INFO] 192.168.1.125 - - [24/Jul/2025 15:13:20] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 15:13:21,044 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:13:21,044 [INFO] {"timestamp": "2025-07-24T15:13:21.044751", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:13:21,508 [INFO] 192.168.1.125 - - [24/Jul/2025 15:13:21] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:13:29,182 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:13:29,183 [INFO] {"timestamp": "2025-07-24T15:13:29.182971", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:13:29,547 [INFO] 192.168.1.125 - - [24/Jul/2025 15:13:29] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:14:07,478 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:14:07,478 [INFO] {"timestamp": "2025-07-24T15:14:07.478187", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:14:07,828 [INFO] 192.168.1.125 - - [24/Jul/2025 15:14:07] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:15:08,666 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:15:08,666 [INFO] {"timestamp": "2025-07-24T15:15:08.666289", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:15:10,014 [INFO] 192.168.1.125 - - [24/Jul/2025 15:15:10] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:16:18,764 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 15:16:18,764 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 15:16:18,765 [INFO]  * Restarting with stat
+2025-07-24 15:16:19,565 [WARNING]  * Debugger is active!
+2025-07-24 15:16:19,567 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:16:24,857 [INFO] 192.168.1.125 - - [24/Jul/2025 15:16:24] "GET / HTTP/1.1" 200 -
+2025-07-24 15:16:31,951 [WARNING] \u274c Failed login: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:16:32,298 [INFO] admin|login_failed|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:16:32,299 [INFO] {"timestamp": "2025-07-24T15:16:32.298912", "username": "admin", "activity": "login_failed", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:16:32,300 [INFO] 192.168.1.125 - - [24/Jul/2025 15:16:32] "POST / HTTP/1.1" 200 -
+2025-07-24 15:16:38,721 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:16:39,062 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:16:39,062 [INFO] {"timestamp": "2025-07-24T15:16:39.062300", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:16:39,063 [INFO] 192.168.1.125 - - [24/Jul/2025 15:16:39] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 15:16:39,347 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:16:39,347 [INFO] {"timestamp": "2025-07-24T15:16:39.347502", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:16:39,874 [INFO] 192.168.1.125 - - [24/Jul/2025 15:16:39] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:17:40,667 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:17:40,667 [INFO] {"timestamp": "2025-07-24T15:17:40.667336", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:17:41,053 [INFO] 192.168.1.125 - - [24/Jul/2025 15:17:41] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:18:42,669 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:18:42,670 [INFO] {"timestamp": "2025-07-24T15:18:42.670219", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:18:43,081 [INFO] 192.168.1.125 - - [24/Jul/2025 15:18:43] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:19:44,727 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:19:44,728 [INFO] {"timestamp": "2025-07-24T15:19:44.728039", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:19:45,122 [INFO] 192.168.1.125 - - [24/Jul/2025 15:19:45] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:20:46,659 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:20:46,659 [INFO] {"timestamp": "2025-07-24T15:20:46.659491", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:20:47,063 [INFO] 192.168.1.125 - - [24/Jul/2025 15:20:47] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:21:48,686 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:21:48,686 [INFO] {"timestamp": "2025-07-24T15:21:48.686412", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:21:49,078 [INFO] 192.168.1.125 - - [24/Jul/2025 15:21:49] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:22:18,185 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 15:22:18,185 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 15:22:18,186 [INFO]  * Restarting with stat
+2025-07-24 15:22:18,994 [WARNING]  * Debugger is active!
+2025-07-24 15:22:18,996 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:22:25,867 [INFO] 192.168.1.125 - - [24/Jul/2025 15:22:25] "GET / HTTP/1.1" 200 -
+2025-07-24 15:22:35,205 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:22:35,770 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:22:35,770 [INFO] {"timestamp": "2025-07-24T15:22:35.770744", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:22:35,771 [INFO] 192.168.1.125 - - [24/Jul/2025 15:22:35] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 15:22:36,170 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:22:36,170 [INFO] {"timestamp": "2025-07-24T15:22:36.170579", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:22:36,655 [INFO] 192.168.1.125 - - [24/Jul/2025 15:22:36] "GET /admin HTTP/1.1" 200 -
+2025-07-24 15:24:02,673 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.125:5000
+2025-07-24 15:24:02,674 [INFO] [33mPress CTRL+C to quit[0m
+2025-07-24 15:24:02,675 [INFO]  * Restarting with stat
+2025-07-24 15:24:03,507 [WARNING]  * Debugger is active!
+2025-07-24 15:24:03,511 [INFO]  * Debugger PIN: 112-764-154
+2025-07-24 15:24:08,636 [INFO] 192.168.1.125 - - [24/Jul/2025 15:24:08] "GET / HTTP/1.1" 200 -
+2025-07-24 15:24:17,454 [INFO] \u2705 Login success: user=admin, IP=192.168.1.125, Location=Unknown, Unknown
+2025-07-24 15:24:17,790 [INFO] admin|login_success|192.168.1.125|Unknown|Unknown|{'ip': '192.168.1.125', 'location': {'error': 'Could not determine location'}, 'device': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'}
+2025-07-24 15:24:17,792 [INFO] {"timestamp": "2025-07-24T15:24:17.792336", "username": "admin", "activity": "login_success", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"ip": "192.168.1.125", "location": {"error": "Could not determine location"}, "device": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"}}
+2025-07-24 15:24:17,793 [INFO] 192.168.1.125 - - [24/Jul/2025 15:24:17] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-07-24 15:24:18,140 [INFO] admin|admin_access|192.168.1.125|Unknown|Unknown|{'path': '/admin'}
+2025-07-24 15:24:18,141 [INFO] {"timestamp": "2025-07-24T15:24:18.140937", "username": "admin", "activity": "admin_access", "ip": "192.168.1.125", "geolocation": {"error": "Could not determine location"}, "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36", "device_info": {"platform": "Windows", "browser": "Chrome", "version": "138.0.0", "is_mobile": false, "is_tablet": false, "is_pc": true, "is_bot": false}, "details": {"path": "/admin"}}
+2025-07-24 15:24:18,494 [INFO] 192.168.1.125 - - [24/Jul/2025 15:24:18] "GET /admin HTTP/1.1" 200 -
