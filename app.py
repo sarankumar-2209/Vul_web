@@ -14,20 +14,14 @@ from user_agents import parse
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_wtf.csrf import CSRFProtect
 from flask import Flask, request, render_template, redirect, make_response, session, jsonify
-<<<<<<< HEAD
 from flask_wtf.csrf import CSRFProtect
-=======
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
 
 
 
 # === Setup Flask ===
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
-<<<<<<< HEAD
 # Initialize CSRF protection
-=======
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
 csrf = CSRFProtect(app)
 # === Rate Limiter ===
 limiter = Limiter(
@@ -76,7 +70,6 @@ users = {
         'password': generate_password_hash('password123'),
         'last_login': None,
         'login_count': 0,
-<<<<<<< HEAD
         'login_history': [],
         'role': 'admin'
     },
@@ -86,9 +79,6 @@ users = {
         'login_count': 0,
         'login_history': [],
         'role': 'user'
-=======
-        'login_history': []
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
     }
 }
 
@@ -335,12 +325,8 @@ def login():
                 'created_at': datetime.now(),
                 'expires_at': expires_at,
                 'last_activity': datetime.now(),
-<<<<<<< HEAD
                 'activities': [],
                 'role': users[username]['role']
-=======
-                'activities': []
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
             }
 
             logging.info(f"✅ Login success: user={username}, IP={client_info['ip']}, Location={client_info.get('geolocation', {}).get('city', 'Unknown')}, {client_info.get('geolocation', {}).get('country', 'Unknown')}")
@@ -350,15 +336,11 @@ def login():
                 'device': client_info['user_agent']
             })
             
-<<<<<<< HEAD
             # Redirect based on role
             if users[username]['role'] == 'admin':
                 resp = make_response(redirect('/admin'))
             else:
                 resp = make_response(redirect('/user'))
-=======
-            resp = make_response(redirect('/admin'))
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
             resp.set_cookie('session', session_token, httponly=True, secure=False, samesite='Strict')
             return resp
 
@@ -380,7 +362,6 @@ def login():
     
     return render_template('login.html')
 
-<<<<<<< HEAD
 
 
 @app.route('/user/escalate', methods=['POST'])
@@ -438,15 +419,12 @@ def verify_json_response(response):
             app.logger.error(f"Non-JSON response for {request.path}")
     return response
 
-=======
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
 # === ADMIN DASHBOARD ===
 @app.route('/admin')
 def admin():
     session_token = request.cookies.get('session')
     if not session_token or session_token not in sessions:
         return redirect('/')
-<<<<<<< HEAD
     
     # Check if user has admin role
     if sessions[session_token].get('role') != 'admin':
@@ -465,19 +443,6 @@ def admin():
     log_activity(username, 'admin_access', {'path': request.path})
     
     # Prepare active sessions list
-=======
-
-    session_data = sessions[session_token]
-    username = session_data['username']
-    
-    # Update last activity
-    sessions[session_token]['last_activity'] = datetime.now()
-    
-    # Log this activity
-    log_activity(username, 'admin_access', {'path': request.path})
-    
-    # Prepare active sessions
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
     active_sessions = []
     now = datetime.now()
     for token, session_info in sessions.items():
@@ -498,68 +463,11 @@ def admin():
                     'browser': session_info['client_info']['browser'],
                     'version': session_info['client_info']['version']
                 }
-<<<<<<< HEAD
-=======
             })
 
     # Get user's login history
     login_history = users[username].get('login_history', [])[-10:][::-1]  # Last 10 logins
     
-    # Get logs and activities
-    audit_logs = read_audit_logs(100)
-    recent_activities = user_activities[-50:][::-1]  # Last 50 activities, newest first
-    file_activities = read_activity_logs(50)
-    traceback_logs = read_traceback_logs(50)
-
-    return render_template('admin.html', 
-                         sessions=active_sessions,
-                         users=[{
-                             'username': u, 
-                             'last_login': users[u]['last_login'], 
-                             'login_count': users[u]['login_count'],
-                             'login_history': users[u].get('login_history', [])[-3:][::-1]
-                         } for u in users],
-                         current_client=get_client_info(),
-                         audit_logs=audit_logs,
-                         recent_activities=recent_activities,
-                         file_activities=file_activities,
-                         traceback_logs=traceback_logs,
-                         login_history=login_history,
-                         current_user=username)
-
-
-
-# === SESSION FORENSICS ===
-@app.route('/admin/session_forensics/<session_token>')
-def session_forensics(session_token):
-    if not request.cookies.get('session') or request.cookies.get('session') not in sessions:
-        return redirect('/')
-
-    if session_token not in sessions:
-        return "Session not found", 404
-
-    session_data = sessions[session_token]
-    username = session_data['username']
-    
-    # Get all activities for this session
-    session_activities = [a for a in user_activities if a.get('client_info', {}).get('ip') == session_data['client_info']['ip']]
-    
-    # Get similar sessions from same IP
-    similar_sessions = []
-    for token, sess in sessions.items():
-        if sess['client_info']['ip'] == session_data['client_info']['ip'] and token != session_token:
-            similar_sessions.append({
-                'token': token,
-                'username': sess['username'],
-                'created_at': sess['created_at'],
-                'user_agent': sess['client_info']['user_agent']
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
-            })
-
-    # Get user's login history
-    login_history = users[username].get('login_history', [])[-10:][::-1]  # Last 10 logins
-    
-<<<<<<< HEAD
     return render_template('admin.html', 
                          sessions=active_sessions,
                          users=[{
@@ -682,28 +590,6 @@ def session_forensics(session_token):
                          historical_logins=historical_logins,
                          current_user=username)
 
-=======
-    # Get historical logins from same IP
-    historical_logins = []
-    for user in users.values():
-        for login in user.get('login_history', []):
-            if login.get('ip') == session_data['client_info']['ip']:
-                historical_logins.append({
-                    'username': username,
-                    'timestamp': login.get('timestamp'),
-                    'user_agent': login.get('user_agent')
-                })
-    
-    log_activity(username, 'session_forensics_view', {'target_session': session_token})
-    
-    return render_template('session_forensics.html',
-                         session=session_data,
-                         activities=session_activities[-50:][::-1],  # Last 50 activities
-                         similar_sessions=similar_sessions,
-                         historical_logins=historical_logins,
-                         current_user=username)
-
->>>>>>> c96909f9cad4c82fc964230824e402dfcdeeccba
 @app.route('/admin/terminate_session', methods=['POST'])
 def terminate_session():
     session_token = request.cookies.get('session')
