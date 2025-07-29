@@ -1,0 +1,479 @@
+[file name]: templates/session_forensics.html
+[file content begin]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Forensics | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reuse the same styles from admin.html */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --danger-color: #f72585;
+            --warning-color: #f8961e;
+            --success-color: #4cc9f0;
+            --info-color: #4895ef;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar - same as admin.html */
+        .sidebar {
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+        
+        /* Session Info */
+        .session-info {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .info-item {
+            margin-bottom: 1rem;
+        }
+        
+        .info-label {
+            font-weight: 500;
+            color: var(--gray-color);
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-value {
+            font-size: 1.1rem;
+        }
+        
+        /* Geolocation Map */
+        .geolocation-map {
+            height: 300px;
+            background-color: #eee;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            padding: 1rem;
+            color: var(--gray-color);
+        }
+        
+        /* Tables - same as admin.html */
+        .section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            font-weight: 500;
+            color: var(--gray-color);
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .badge-success {
+            background-color: rgba(76, 201, 240, 0.1);
+            color: var(--success-color);
+        }
+        
+        .badge-warning {
+            background-color: rgba(248, 150, 30, 0.1);
+            color: var(--warning-color);
+        }
+        
+        .badge-danger {
+            background-color: rgba(247, 37, 133, 0.1);
+            color: var(--danger-color);
+        }
+        
+        .badge-info {
+            background-color: rgba(72, 149, 239, 0.1);
+            color: var(--info-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar - same as admin.html -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>Admin Panel</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/admin" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-users"></i>
+                        <span>Users</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <i class="fas fa-fingerprint"></i>
+                        <span>Session Forensics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-history"></i>
+                        <span>Activity Logs</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <a href="/admin" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Dashboard</span>
+            </a>
+            
+            <div class="header">
+                <h1 class="page-title">Session Forensics</h1>
+                <div class="user-info">
+                    <div class="user-avatar">{{ current_user[0]|upper }}</div>
+                    <a href="/logout" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Session Information -->
+            <div class="session-info">
+                <h2>Session Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">User</div>
+                        <div class="info-value">{{ session.username }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Session Token</div>
+                        <div class="info-value">{{ session_token[:12] }}...{{ session_token[-12:] }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">IP Address</div>
+                        <div class="info-value">{{ session.client_info.ip }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Created At</div>
+                        <div class="info-value">{{ session.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Last Activity</div>
+                        <div class="info-value">{{ session.last_activity.strftime('%Y-%m-%d %H:%M:%S') }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Expires At</div>
+                        <div class="info-value">{{ session.expires_at.strftime('%Y-%m-%d %H:%M:%S') }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Geolocation Information -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Geolocation Data</h2>
+                </div>
+                <div class="geolocation-map">
+                    {% if session.client_info.geolocation and session.client_info.geolocation.latitude %}
+                    <!-- In a real app, you would integrate with Google Maps or similar -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h3>Location: {{ session.client_info.geolocation.city }}, {{ session.client_info.geolocation.country }}</h3>
+                        <p>Coordinates: {{ session.client_info.geolocation.latitude }}, {{ session.client_info.geolocation.longitude }}</p>
+                        <p>Timezone: {{ session.client_info.geolocation.timezone }}</p>
+                        <p>Source: {{ session.client_info.geolocation.source }}</p>
+                    </div>
+                    {% else %}
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <h3>Location data not available</h3>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Device</div>
+                        <div class="info-value">
+                            {{ session.client_info.platform }}<br>
+                            {{ session.client_info.browser }} {{ session.client_info.version }}
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">User Agent</div>
+                        <div class="info-value" style="word-break: break-all;">{{ session.client_info.user_agent }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Hostname</div>
+                        <div class="info-value">{{ session.client_info.hostname or 'Unknown' }}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Referrer</div>
+                        <div class="info-value">{{ session.client_info.referrer_domain or 'Direct' }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session Activities -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Session Activities</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Activity</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for activity in activities %}
+                        <tr>
+                            <td>{{ activity.timestamp }}</td>
+                            <td>
+                                {% if activity.activity_type == 'login_success' %}
+                                    <span class="badge badge-success">Login Success</span>
+                                {% elif activity.activity_type == 'login_failed' %}
+                                    <span class="badge badge-danger">Login Failed</span>
+                                {% elif activity.activity_type == 'logout' %}
+                                    <span class="badge badge-info">Logout</span>
+                                {% elif activity.activity_type == 'session_terminated' %}
+                                    <span class="badge badge-warning">Session Terminated</span>
+                                {% else %}
+                                    <span class="badge">{{ activity.activity_type }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if activity.details %}
+                                    {{ activity.details|tojson|safe|truncate(100) }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Related Sessions -->
+            {% if similar_sessions %}
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Related Sessions (Same IP)</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Session Token</th>
+                            <th>Created At</th>
+                            <th>User Agent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sess in similar_sessions %}
+                        <tr>
+                            <td>{{ sess.username }}</td>
+                            <td>{{ sess.token[:12] }}...{{ sess.token[-12:] }}</td>
+                            <td>{{ sess.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                            <td>{{ sess.user_agent|truncate(50) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            <!-- Historical Logins -->
+            {% if historical_logins %}
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Historical Logins (Same IP)</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Timestamp</th>
+                            <th>User Agent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for login in historical_logins %}
+                        <tr>
+                            <td>{{ login.username }}</td>
+                            <td>{{ login.timestamp }}</td>
+                            <td>{{ login.user_agent|truncate(50) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+
+            <!-- Actions -->
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Session Actions</h2>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-danger" onclick="terminateSession('{{ session_token }}')">
+                        <i class="fas fa-power-off"></i> Terminate Session
+                    </button>
+                    <button class="btn btn-primary" onclick="location.reload()">
+                        <i class="fas fa-sync-alt"></i> Refresh Data
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function terminateSession(token) {
+            if (confirm('Are you sure you want to terminate this session? All active connections will be closed.')) {
+                fetch('/admin/terminate_session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `token=${encodeURIComponent(token)}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        alert('Session terminated successfully');
+                        window.location.href = '/admin';
+                    } else {
+                        alert('Error: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+[file content end]

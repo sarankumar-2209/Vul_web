@@ -5,3 +5,8 @@ itsdangerous
 click
 blinker
 gunicorn 
+geoip2
+flask_limiter
+user_agents
+flask_wtf
+user-agents

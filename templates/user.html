@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: white;
+            border-radius: 5px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .forgot-password {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9em;
+        }
+        .forgot-password a {
+            color: #666;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        .debug-info {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 2rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            //code ADMIN123
+        }
+        .support-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .support-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>User Dashboard</h1>
+        <div>
+            <span>Welcome, {{ username }}</span> |
+            <a href="/logout" style="color: white;">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="card">
+                <h2>Profile</h2>
+                <p>Update your personal information and settings.</p>
+            </div>
+            <div class="card">
+                <h2>Messages</h2>
+                <p>You have 3 unread messages.</p>
+            </div>
+            <div class="card">
+                <h2>Activity</h2>
+                <p>Recent activities will appear here.</p>
+            </div>
+        </div>
+
+        <div class="forgot-password">
+            <a href="#" id="forgotPasswordTrigger" class="support-link">Forgot password?</a>
+        </div>
+
+        <div class="debug-info">
+            <h3>Client Information</h3>
+            <p>IP: {{ client_info.ip }}</p>
+            <p>Browser: {{ client_info.browser }} {{ client_info.version }}</p>
+            <p>Platform: {{ client_info.platform }}</p>
+        </div>
+    </div>
+
+    <script>
+    let clickCount = 0;
+    const funnyMessages = [
+        "Oops! Did you forget again?",
+        "Oops! Did you forget again?",
+        "Oops! Did you forget again?",
+        "Oops! Did you forget again?",
+        "Oops! Did you forget again?"
+    ];
+
+    document.getElementById('forgotPasswordTrigger').addEventListener('click', async function(e) {
+        e.preventDefault();
+        clickCount++;
+        
+        if (clickCount < 5) {
+            alert(funnyMessages[clickCount - 1]);
+            return;
+        }
+        
+        // Reset counter after 5 clicks
+        clickCount = 0;
+        
+        const ticketNumber = prompt('Please enter your admin access code:');
+        if (!ticketNumber) return;
+        
+        try {
+            const response = await fetch('/user/escalate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `ticket_number=${encodeURIComponent(ticketNumber)}`,
+                credentials: 'include'
+            });
+
+            // Handle non-JSON responses
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                const text = await response.text();
+                throw new Error('Server returned an unexpected response');
+            }
+
+            const data = await response.json();
+            
+            if (!response.ok) {
+                throw new Error(data.message || 'Request failed');
+            }
+            
+            if (data.status === 'success') {
+                alert('Admin privileges granted temporarily. Redirecting...');
+                window.location.href = data.redirect;
+            } else {
+                alert(data.message || 'Access denied. Please contact IT support.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to process your request. Please try again later.');
+        }
+    });
+    </script>
+</body>
+</html>
