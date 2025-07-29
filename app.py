@@ -66,8 +66,8 @@ traceback_logger.setLevel(logging.INFO)
 
 # In-memory storage (replaces database)
 users = {
-    'admin': {
-        'password': generate_password_hash('password123'),
+    'Saran!': {
+        'password': generate_password_hash('Skumar@2004'),
         'last_login': None,
         'login_count': 0,
         'login_history': [],
