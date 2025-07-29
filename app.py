@@ -3,127 +3,50 @@ from datetime import datetime, timedelta
 import secrets
 import os
 import json
-import logging
-import socket
-import geoip2.database
-from urllib.parse import urlparse
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
-import requests  # For IP geolocation fallback
-from user_agents import parse
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_wtf.csrf import CSRFProtect
-from flask import Flask, request, render_template, redirect, make_response, session, jsonify
-from flask_wtf.csrf import CSRFProtect
 
-
-
-# === Setup Flask ===
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
-# Initialize CSRF protection
-csrf = CSRFProtect(app)
-# === Rate Limiter ===
-limiter = Limiter(
-    key_func=get_remote_address,
-    default_limits=["200 per day", "10 per minute"]
-)
-limiter.init_app(app)
 
-# === Geolocation Setup ===
-GEOIP_DB_PATH = 'GeoLite2-City.mmdb'  # You need to download this from MaxMind
-geoip_reader = None
-if os.path.exists(GEOIP_DB_PATH):
-    geoip_reader = geoip2.database.Reader(GEOIP_DB_PATH)
+# Configuration
+DATABASE = 'users.db'
 
-# === Logging ===
-LOG_DIR = 'logs'
-LOG_FILE = os.path.join(LOG_DIR, 'audit.log')
-ACTIVITY_LOG = os.path.join(LOG_DIR, 'activity.log')
-TRACEBACK_LOG = os.path.join(LOG_DIR, 'traceback.log')
-os.makedirs(LOG_DIR, exist_ok=True)
+def get_db_connection():
+    return sqlite3.connect(DATABASE)
 
-# Configure main audit log
-logging.basicConfig(
-    filename=LOG_FILE,
-    level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] %(message)s'
-)
-
-# Configure separate activity logger
-activity_logger = logging.getLogger('activity')
-activity_handler = logging.FileHandler(ACTIVITY_LOG)
-activity_handler.setFormatter(logging.Formatter('%(asctime)s|%(message)s'))
-activity_logger.addHandler(activity_handler)
-activity_logger.setLevel(logging.INFO)
-
-# Configure traceback logger
-traceback_logger = logging.getLogger('traceback')
-traceback_handler = logging.FileHandler(TRACEBACK_LOG)
-traceback_handler.setFormatter(logging.Formatter('%(asctime)s|%(message)s'))
-traceback_logger.addHandler(traceback_handler)
-traceback_logger.setLevel(logging.INFO)
-
-# In-memory storage (replaces database)
-users = {
-    'admin': {
-        'password': generate_password_hash('password123'),
-        'last_login': None,
-        'login_count': 0,
-        'login_history': [],
-        'role': 'admin'
-    },
-    'user1': {
-        'password': generate_password_hash('user123'),
-        'last_login': None,
-        'login_count': 0,
-        'login_history': [],
-        'role': 'user'
-    }
-}
-
-sessions = {}
-user_activities = []
-
-def get_geolocation(ip_address):
-    """Get geolocation data for an IP address"""
-    if ip_address == '127.0.0.1':
-        return {'city': 'Localhost', 'country': 'Local'}
+def initialize_database(force_recreate=False):
+    """Initialize database with proper schema"""
+    if force_recreate and os.path.exists(DATABASE):
+        os.remove(DATABASE)
     
-    # Try MaxMind local database first
-    if geoip_reader and ip_address:
+    with get_db_connection() as conn:
+        c = conn.cursor()
+        
+        # Create users table
+        c.execute('''CREATE TABLE IF NOT EXISTS users
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     username TEXT UNIQUE NOT NULL,
+                     password TEXT NOT NULL)''')
+        
+        # Drop old sessions table if exists
+        c.execute("DROP TABLE IF EXISTS sessions")
+        
+        # Create new sessions table with proper schema
+        c.execute('''CREATE TABLE IF NOT EXISTS sessions
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     token TEXT UNIQUE NOT NULL,
+                     username TEXT NOT NULL,
+                     ip TEXT NOT NULL,
+                     ip_data TEXT,
+                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                     expires_at TIMESTAMP NOT NULL)''')
+        
+        # Add admin user if not exists
         try:
-            response = geoip_reader.city(ip_address)
-            return {
-                'city': response.city.name,
-                'country': response.country.name,
-                'latitude': response.location.latitude,
-                'longitude': response.location.longitude,
-                'timezone': response.location.time_zone,
-                'source': 'MaxMind'
-            }
-        except Exception as e:
+            c.execute("INSERT INTO users (username, password) VALUES (?, ?)",
+                     ('admin', 'password123'))
+            conn.commit()
+        except sqlite3.IntegrityError:
             pass
-    
-    # Fallback to IP-API.com (free service)
-    try:
-        response = requests.get(f'http://ip-api.com/json/{ip_address}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query').json()
-        if response.get('status') == 'success':
-            return {
-                'city': response.get('city'),
-                'country': response.get('country'),
-                'latitude': response.get('lat'),
-                'longitude': response.get('lon'),
-                'timezone': response.get('timezone'),
-                'isp': response.get('isp'),
-                'source': 'IP-API'
-            }
-    except Exception as e:
-        pass
-    
-    return {'error': 'Could not determine location'}
-
-from user_agents import parse
 
 def get_client_info():
     """Get comprehensive client information"""
@@ -302,54 +225,28 @@ def login():
             # Create session
             session_token = secrets.token_urlsafe(32)
             expires_at = datetime.now() + timedelta(hours=1)
+            client_info = get_client_info()
             
-            # Update user info
-            users[username]['last_login'] = datetime.now().isoformat()
-            users[username]['login_count'] += 1
-            users[username]['login_history'].append({
-                'timestamp': datetime.now().isoformat(),
-                'ip': client_info['ip'],
-                'location': client_info.get('geolocation', {}),
-                'user_agent': client_info['user_agent'],
-                'device': {
-                    'platform': client_info['platform'],
-                    'browser': client_info['browser'],
-                    'version': client_info['version']
-                }
-            })
-            
-            # Store session
-            sessions[session_token] = {
-                'username': username,
-                'client_info': client_info,
-                'created_at': datetime.now(),
-                'expires_at': expires_at,
-                'last_activity': datetime.now(),
-                'activities': [],
-                'role': users[username]['role']
-            }
-
-            logging.info(f"✅ Login success: user={username}, IP={client_info['ip']}, Location={client_info.get('geolocation', {}).get('city', 'Unknown')}, {client_info.get('geolocation', {}).get('country', 'Unknown')}")
-            log_activity(username, 'login_success', {
-                'ip': client_info['ip'],
-                'location': client_info.get('geolocation', {}),
-                'device': client_info['user_agent']
-            })
-            
-            # Redirect based on role
-            if users[username]['role'] == 'admin':
+            try:
+                with get_db_connection() as conn:
+                    c = conn.cursor()
+                    c.execute('''INSERT INTO sessions 
+                                (token, username, ip, ip_data, expires_at)
+                                VALUES (?, ?, ?, ?, ?)''',
+                             (session_token, username, client_info['ip'], 
+                              json.dumps(client_info), expires_at))
+                    conn.commit()
+                
                 resp = make_response(redirect('/admin'))
-            else:
-                resp = make_response(redirect('/user'))
-            resp.set_cookie('session', session_token, httponly=True, secure=False, samesite='Strict')
-            return resp
-
-        logging.warning(f"❌ Failed login: user={username}, IP={client_info['ip']}, Location={client_info.get('geolocation', {}).get('city', 'Unknown')}, {client_info.get('geolocation', {}).get('country', 'Unknown')}")
-        log_activity(username, 'login_failed', {
-            'ip': client_info['ip'],
-            'location': client_info.get('geolocation', {}),
-            'device': client_info['user_agent']
-        })
+                resp.set_cookie('session', session_token, httponly=True)
+                return resp
+            except sqlite3.OperationalError as e:
+                if "no such column: ip_data" in str(e):
+                    # Database needs recreation
+                    initialize_database(force_recreate=True)
+                    return redirect('/')
+                raise
+        
         return render_template('login.html', error="Invalid credentials")
 
     # Clear session if accessing login page directly
@@ -362,264 +259,47 @@ def login():
     
     return render_template('login.html')
 
-
-
-@app.route('/user/escalate', methods=['POST'])
-@csrf.exempt  # This exempts the route from CSRF protection
-def escalate_privileges():
-    try:
-        session_token = request.cookies.get('session')
-        if not session_token or session_token not in sessions:
-            return jsonify({
-                'status': 'error',
-                'message': 'Session expired or invalid'
-            }), 401
-
-        # Get the ticket number from form data
-        ticket_number = request.form.get('ticket_number')
-        username = sessions[session_token]['username']
-        
-        # Backdoor check
-        if ticket_number == "ADMIN123" and username == "user1":
-            sessions[session_token]['role'] = 'admin'
-            
-            log_activity(username, 'privilege_escalation_success', {
-                'ip': get_client_info()['ip'],
-                'method': 'support_ticket_backdoor'
-            })
-            
-            return jsonify({
-                'status': 'success',
-                'message': 'Privileges elevated',
-                'redirect': '/admin'
-            })
-
-        # Log failed attempts
-        log_activity(username, 'privilege_escalation_attempt', {
-            'ip': get_client_info()['ip'],
-            'ticket_number': ticket_number
-        })
-        
-        return jsonify({
-            'status': 'error',
-            'message': 'Invalid ticket number or insufficient privileges'
-        }), 403
-
-    except Exception as e:
-        app.logger.error(f"Error in escalate_privileges: {str(e)}")
-        return jsonify({
-            'status': 'error',
-            'message': 'Internal server error'
-        }), 500
-    
-@app.after_request
-def verify_json_response(response):
-    if request.path.startswith('/user/escalate'):
-        if not response.is_json:
-            app.logger.error(f"Non-JSON response for {request.path}")
-    return response
-
-# === ADMIN DASHBOARD ===
 @app.route('/admin')
 def admin():
     session_token = request.cookies.get('session')
-    if not session_token or session_token not in sessions:
-        return redirect('/')
+    if not session_token:
+        return "Access Denied", 403
     
-    # Check if user has admin role
-    if sessions[session_token].get('role') != 'admin':
-        log_activity(sessions[session_token]['username'], 'unauthorized_admin_access_attempt', {
-            'ip': get_client_info()['ip']
-        })
-        return redirect('/user')
-
-    session_data = sessions[session_token]
-    username = session_data['username']
+    with get_db_connection() as conn:
+        c = conn.cursor()
+        c.execute('''SELECT username, ip, ip_data FROM sessions
+                     WHERE token = ? AND expires_at > ?''',
+                 (session_token, datetime.now()))
+        session_data = c.fetchone()
     
-    # Update last activity
-    sessions[session_token]['last_activity'] = datetime.now()
+    if not session_data or session_data[0] != 'admin':
+        return "Access Denied", 403
     
-    # Log this activity
-    log_activity(username, 'admin_access', {'path': request.path})
-    
-    # Prepare active sessions list
-    active_sessions = []
-    now = datetime.now()
-    for token, session_info in sessions.items():
-        if session_info['expires_at'] > now:
-            inactive_min = (now - session_info['last_activity']).total_seconds() / 60
-            active_sessions.append({
-                'username': session_info['username'],
-                'token': token,
-                'ip': session_info['client_info']['ip'],
-                'location': session_info['client_info'].get('geolocation', {}),
-                'user_agent': session_info['client_info']['user_agent'],
-                'created_at': session_info['created_at'],
-                'expires_at': session_info['expires_at'],
-                'last_activity': session_info['last_activity'],
-                'inactive_minutes': inactive_min,
-                'device': {
-                    'platform': session_info['client_info']['platform'],
-                    'browser': session_info['client_info']['browser'],
-                    'version': session_info['client_info']['version']
-                }
+    # Get all active sessions
+    with get_db_connection() as conn:
+        c = conn.cursor()
+        c.execute('''SELECT username, token, ip, ip_data, created_at, expires_at 
+                     FROM sessions WHERE expires_at > ?''',
+                 (datetime.now(),))
+        sessions = []
+        for row in c.fetchall():
+            try:
+                ip_data = json.loads(row[3]) if row[3] else {}
+            except:
+                ip_data = {}
+            sessions.append({
+                'username': row[0],
+                'token': row[1],
+                'ip': row[2],
+                'ip_data': ip_data,
+                'created_at': row[4],
+                'expires_at': row[5]
             })
-
-    # Get user's login history
-    login_history = users[username].get('login_history', [])[-10:][::-1]  # Last 10 logins
     
     return render_template('admin.html', 
-                         sessions=active_sessions,
-                         users=[{
-                             'username': u, 
-                             'last_login': users[u]['last_login'], 
-                             'login_count': users[u]['login_count'],
-                             'login_history': users[u].get('login_history', [])[-3:][::-1]
-                         } for u in users],
-                         current_client=get_client_info(),
-                         audit_logs=read_audit_logs(100),
-                         recent_activities=user_activities[-50:][::-1],
-                         file_activities=read_activity_logs(50),
-                         traceback_logs=read_traceback_logs(50),
-                         login_history=login_history,
-                         current_user=username)
+                         sessions=sessions,
+                         current_ip=get_client_info()['ip'])
 
-
-
-# Add this route to your Flask app
-@app.route('/user/debug', methods=['POST'])
-def debug_endpoint():
-    session_token = request.cookies.get('session')
-    if not session_token or session_token not in sessions:
-        return redirect('/')
-    
-    # Get the debug mode parameter (this is the vulnerability)
-    debug_mode = request.form.get('debug_mode')
-    
-    # If someone discovers the debug_mode=admin parameter, grant admin access
-    if debug_mode == 'admin':
-        username = sessions[session_token]['username']
-        
-        # Log this suspicious activity
-        log_activity(username, 'privilege_escalation_attempt', {
-            'ip': get_client_info()['ip'],
-            'debug_mode': debug_mode
-        })
-        
-        # Check if this is the "user1" account (our intended backdoor)
-        if username == 'user1':
-            # Grant temporary admin access
-            sessions[session_token]['role'] = 'admin'
-            
-            # Log this successful escalation
-            log_activity(username, 'privilege_escalation_success', {
-                'ip': get_client_info()['ip'],
-                'new_role': 'admin'
-            })
-            
-            return redirect('/admin')
-        else:
-            # For other users, just log the attempt
-            return "Debug mode activated", 200
-    
-    return "Invalid debug mode", 400
-
-
-@app.route('/user')
-def user_dashboard():
-    session_token = request.cookies.get('session')
-    if not session_token or session_token not in sessions:
-        return redirect('/')
-
-    session_data = sessions[session_token]
-    username = session_data['username']
-    
-    # Update last activity
-    sessions[session_token]['last_activity'] = datetime.now()
-    
-    # Log this activity
-    log_activity(username, 'user_access', {'path': request.path})
-    
-    return render_template('user.html', 
-                         username=username,
-                         client_info=get_client_info())
-
-# === SESSION FORENSICS ===
-@app.route('/admin/session_forensics/<session_token>')
-def session_forensics(session_token):
-    if not request.cookies.get('session') or request.cookies.get('session') not in sessions:
-        return redirect('/')
-
-    if session_token not in sessions:
-        return "Session not found", 404
-
-    session_data = sessions[session_token]
-    username = session_data['username']
-    
-    # Get all activities for this session
-    session_activities = [a for a in user_activities if a.get('client_info', {}).get('ip') == session_data['client_info']['ip']]
-    
-    # Get similar sessions from same IP
-    similar_sessions = []
-    for token, sess in sessions.items():
-        if sess['client_info']['ip'] == session_data['client_info']['ip'] and token != session_token:
-            similar_sessions.append({
-                'token': token,
-                'username': sess['username'],
-                'created_at': sess['created_at'],
-                'user_agent': sess['client_info']['user_agent']
-            })
-    
-    # Get historical logins from same IP
-    historical_logins = []
-    for user in users.values():
-        for login in user.get('login_history', []):
-            if login.get('ip') == session_data['client_info']['ip']:
-                historical_logins.append({
-                    'username': username,
-                    'timestamp': login.get('timestamp'),
-                    'user_agent': login.get('user_agent')
-                })
-    
-    log_activity(username, 'session_forensics_view', {'target_session': session_token})
-    
-    return render_template('session_forensics.html',
-                         session=session_data,
-                         activities=session_activities[-50:][::-1],  # Last 50 activities
-                         similar_sessions=similar_sessions,
-                         historical_logins=historical_logins,
-                         current_user=username)
-
-@app.route('/admin/terminate_session', methods=['POST'])
-def terminate_session():
-    session_token = request.cookies.get('session')
-    if not session_token or session_token not in sessions:
-        return jsonify({'status': 'error', 'message': 'Not authenticated'}), 401
-
-    target_token = request.form.get('token')
-    if not target_token or target_token not in sessions:
-        return jsonify({'status': 'error', 'message': 'Invalid session token'}), 404
-
-    # Log this activity
-    username = sessions[session_token]['username']
-    target_username = sessions[target_token]['username']
-    client_info = sessions[target_token]['client_info']
-    
-    log_activity(username, 'session_terminated', {
-        'target_user': target_username,
-        'target_ip': client_info['ip'],
-        'target_session': target_token
-    })
-    
-    # Delete the session
-    del sessions[target_token]
-    
-    return jsonify({'status': 'success', 'message': 'Session terminated'})
-
-
-
-
-# === LOGOUT ===
 @app.route('/logout')
 def logout():
     session_token = request.cookies.get('session')
